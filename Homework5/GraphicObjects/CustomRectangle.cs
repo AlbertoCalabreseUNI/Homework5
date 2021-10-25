@@ -22,8 +22,6 @@ namespace Homework5.GraphicObjects
             this.referX = 0;
             this.referY = 0;
 
-			this.border = 15;
-
             this.blackPen = new Pen(Color.Black);
             this.hitColor = new SolidBrush(Color.Red);
             this.rectColor = new SolidBrush(Color.Green);
@@ -46,7 +44,7 @@ namespace Homework5.GraphicObjects
         //Checks if we're clicking inside the rectangle
         public override bool isHit(int clickX, int clickY)
         {
-            if ((clickX >= this.x + this.border) && (clickX <= this.x + this.width - this.border) && (clickY > this.y + this.border) && (clickY < this.y + this.height - this.border))
+            if ((clickX >= this.x) && (clickX <= this.x + this.width) && (clickY > this.y ) && (clickY < this.y + this.height ))
                 this.hit = true;
 
             if(this.referX == 0) this.referX = clickX;
